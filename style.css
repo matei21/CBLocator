@@ -31,12 +31,24 @@ nav ul{
 	display: flex;
 	list-style: none;
 }
+
 nav ul li{
-	margin-left: 1em;
-	font-size: 2em;
+	padding: .2em;
+	font-size: clamp(1.8vw,1.5em,3vw);
+	margin-left: 1.2em;
+	max-width: 12vw;
+	text-align: center;
+	background: linear-gradient(to right, var(--color3) 50%, var(--color2) 50%);
+  	background-size: 200% 100%;
+  	background-position: right;
+  	transition: all .5s;
 }
-nav ul li a{
-	text-shadow: 1px 0px red;
+nav ul li:hover{
+	background-position: left;
+}
+nav ul li a:hover{
+	transition: 1s;
+	color:white;
 }
 #showcase{
 	min-height:25vh;
@@ -55,7 +67,7 @@ nav ul li a{
 }
 #search{
 	min-height: 10vh;
-	background-color: var(--color4);
+	background-color: var(--color1);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -90,3 +102,170 @@ nav ul li a{
 	color:#fff;
 	text-align: center;
 }
+
+
+/*ABOUT*/
+#container{
+	width: 95vw;
+	height: 50vh;
+	background-color: var(--color3);
+}
+figure{
+	margin-top: 1em;
+	background-color:var(--color3);
+	min-height: 20vh;
+	color: #fff;
+	padding: 1em;
+}
+figure img{
+	float: left;	
+	margin-right: 1em;
+	width: 5vw;
+}
+
+em::before{
+	margin-left: 0.5em;
+	margin-right: -0.2em;
+	content: '"';
+	text-shadow: 2px 2px orangered;
+}
+em::after{
+	content: '"';
+	text-shadow: 2px 2px orangered;
+
+}
+
+#home{
+	background-color: darkcyan;
+	margin-top: 2vh;
+	color: white;
+	text-align: center;
+	font-size: clamp(1.8vw, 2em, 3vw);
+	text-shadow: 1px 1px black;
+	padding:.4em 0 .4em 0;
+}
+
+
+#education{
+	margin-top: 1em;
+	background-color: var(--color2);
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: flex-start;
+	align-items: center;
+	padding-bottom:1em;
+}
+#education ul{
+	list-style: none;
+	text-decoration: underline;
+}
+.section-header{
+	font-family: Ubuntu;
+}	
+
+#courses{
+	padding-top: .5em;
+	padding-bottom: 1em;
+	color: white;
+	margin-top: 1em;
+	background-color: var(--color3);
+	font-family: Ubuntu;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+#courses ul{
+	list-style: none;
+}
+
+#passions{
+	margin-top: 1em;
+	background-color: var(--color2);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+#passions ul{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	list-style: none;
+}
+
+#selector{
+	padding: 1em;
+	text-align: center;
+	min-height: 15vh;
+	background-color: orangered;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+#results{
+	min-height: 20vh;
+	background-color: var(--color4);
+}
+
+#wishlist{
+	min-height: 30vh;
+	background-color: orangered;
+}
+
+#wishlist-header{
+	text-align: center;
+	padding-top: 1em;
+}
+
+#aboutme, #education, #courses, #passions{
+	transition: transform linear 0.5s;
+	transition: font-size ease-out 1s;
+}
+
+#aboutme:hover, #education:hover, #courses:hover, #passions:hover{
+	transform: scale(1.03);
+	font-size: 1.05em;
+}
+
+/*IDEA: last child transition towards left, first towards right, others upwards or downwards*/
